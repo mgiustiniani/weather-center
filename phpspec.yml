@@ -1,0 +1,5 @@
+suites:
+    weather_suite:
+        namespace: Manticora\WeatherCenter
+        psr4_prefix: Manticora\WeatherCenter
+
