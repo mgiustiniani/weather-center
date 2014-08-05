@@ -1,7 +1,14 @@
 <serializer>
-    <class name="Manticora\WeatherCenter\Domain\Model\Weather" xml-root-name="weather">
+    <class name="Manticora\WeatherCenter\Domain\Model\Weather" xml-root-name="weather" xmlns:h="https://github.com/willdurand/Hateoas">
         <property name="condition" groups="detail">
 
         </property>
+        <h:relation rel="icon">
+            <h:href uri="dddd">
+
+
+            </h:href>
+            <h:exclusion groups="detail"  />
+               </h:relation>
     </class>
 </serializer>

@@ -14,6 +14,11 @@ class Weather
     private $condition;
 
     /**
+     * @var string
+     */
+    private $conditionIcon;
+
+    /**
      * @var int
      */
     private $temperature;
@@ -31,9 +36,10 @@ class Weather
     /**
      * @param $condition string
      */
-    public function __construct($condition, $temperature, $humidity, $probabilityOfPrecipitation)
+    public function __construct($condition, $conditionIcon, $temperature, $humidity, $probabilityOfPrecipitation)
     {
         $this->condition = $condition;
+        $this->conditionIcon = $conditionIcon;
         $this->temperature = $temperature;
         $this->humidity = $humidity;
         $this->probabilityOfPrecipitation = $probabilityOfPrecipitation;
