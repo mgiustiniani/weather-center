@@ -9,6 +9,6 @@ class InMemoryQueryRepository implements WeatherQueryRepository
 {
     public function findByLocation($latitude, $longitude)
     {
-        return new Weather('Clear');
+        return new Weather('Clear', 38, 60, 20);
     }
 }
