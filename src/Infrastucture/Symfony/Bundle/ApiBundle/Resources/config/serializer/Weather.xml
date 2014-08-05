@@ -1,0 +1,7 @@
+<serializer>
+    <class name="Manticora\WeatherCenter\Domain\Model\Weather" xml-root-name="weather">
+        <property name="condition" groups="detail">
+
+        </property>
+    </class>
+</serializer>
