@@ -1,10 +1,12 @@
+<?xml version="1.0" ?>
 <serializer>
     <class name="Manticora\WeatherCenter\Domain\Model\Weather\Weather" xml-root-name="weather" xmlns:h="https://github.com/willdurand/Hateoas">
-        <property name="condition" groups="detail">
-
-        </property>
+        <property name="condition" groups="detail"/>
+        <property name="temperature" groups="detail"/>
+        <property name="probabilityOfPrecipitation" groups="detail"/>
+        <property name="humidity" groups="detail"/>
         <h:relation rel="icon">
-            <h:href uri="http://google.it">
+            <h:href uri="expr('http://icons.wxug.com/i/c/f/' ~ object.getConditionIcon() ~ '.gif')">
 
 
             </h:href>

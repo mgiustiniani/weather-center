@@ -44,6 +44,13 @@ class Weather
         $this->humidity = $humidity;
         $this->probabilityOfPrecipitation = $probabilityOfPrecipitation;
     }
+    /**
+     * @return string
+     */
+    public function getConditionIcon()
+    {
+        return $this->conditionIcon;
+    }
 
     /**
      * @return string
