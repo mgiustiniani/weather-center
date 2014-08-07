@@ -5,6 +5,7 @@
         <property name="temperature" groups="detail"/>
         <property name="probabilityOfPrecipitation" groups="detail"/>
         <property name="humidity" groups="detail"/>
+        <property name="wind" groups="detail"/>
         <h:relation rel="icon">
             <h:href uri="expr('http://icons.wxug.com/i/c/f/' ~ object.getConditionIcon() ~ '.gif')">
 

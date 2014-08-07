@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<serializer>
+    <class name="Manticora\WeatherCenter\Domain\Model\Weather\Wind" xml-root-name="wind" xmlns:h="https://github.com/willdurand/Hateoas">
+        <property name="speed" groups="detail"/>
+        <property name="degrees" groups="detail"/>
+    </class>
+</serializer>

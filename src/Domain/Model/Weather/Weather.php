@@ -34,15 +34,21 @@ class Weather
     private $probabilityOfPrecipitation;
 
     /**
+     * @var Wind
+     */
+    private $wind;
+
+    /**
      * @param $condition string
      */
-    public function __construct($condition, $conditionIcon, $temperature, $humidity, $probabilityOfPrecipitation)
+    public function __construct($condition, $conditionIcon, $temperature, $humidity, $probabilityOfPrecipitation, $wind_speed, $wind_degrees)
     {
         $this->condition = $condition;
         $this->conditionIcon = $conditionIcon;
         $this->temperature = $temperature;
         $this->humidity = $humidity;
         $this->probabilityOfPrecipitation = $probabilityOfPrecipitation;
+        $this->wind = new Wind($wind_speed, $wind_degrees);
     }
     /**
      * @return string
@@ -82,5 +88,10 @@ class Weather
     public function getProbabilityOfPrecipitation()
     {
         return $this->probabilityOfPrecipitation;
+    }
+
+    public function getWind()
+    {
+        return $this->wind;
     }
 }

@@ -14,7 +14,7 @@ class WeatherSpec extends ObjectBehavior
 {
     public function let($name)
     {
-        $this->beConstructedWith('Clear', 38, 60, 20 );
+        $this->beConstructedWith('Clear', 'clear', 38, 60, 20, 10,30 );
     }
 
     function it_is_initializable()
@@ -30,17 +30,22 @@ class WeatherSpec extends ObjectBehavior
 
     function it_get_temperature_method_shound_return_integer()
     {
-        $this->getTemperature()->shouldBeAInteger();
+        $this->getTemperature()->shouldBeInteger();
     }
 
     function it_get_humidity_method_should_return_integer()
     {
-        $this->getHumidity()->shouldBeAInteger();
+        $this->getHumidity()->shouldBeInteger();
     }
 
     function it_get_probability_of_precipitation_return_integer()
     {
-        $this->getProbabilityOfPrecipitation()->shouldBeAInteger();
+        $this->getProbabilityOfPrecipitation()->shouldBeInteger();
+    }
+
+    function it_get_wind_return_integer()
+    {
+        $this->getWind()->shouldHaveType('Manticora\WeatherCenter\Domain\Model\Weather\Wind');
     }
 }
 
