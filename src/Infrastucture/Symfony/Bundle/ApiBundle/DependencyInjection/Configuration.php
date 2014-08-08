@@ -20,6 +20,21 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('manticora_weather_center_api');
 
+        $rootNode
+            ->children()
+                ->scalarNode('default')
+                    ->defaultValue('in_memory')
+                ->end()
+                ->arrayNode('weather_underground')
+                    ->children()
+                        ->scalarNode('key')
+                    ->end()
+                        ->scalarNode('lang')
+                            ->defaultValue('EN')
+                    ->end()
+                ->end()
+            ->end();
+
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
         // more information on that topic.

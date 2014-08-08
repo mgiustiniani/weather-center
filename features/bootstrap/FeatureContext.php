@@ -59,7 +59,7 @@ class FeatureContext  implements SnippetAcceptingContext,
     }
 
     /**
-     * @Then print last response
+     * @Then print json result
      */
     public function printLastResponse()
     {
@@ -67,5 +67,6 @@ class FeatureContext  implements SnippetAcceptingContext,
 
 
     }
+
 
 }

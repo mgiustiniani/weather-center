@@ -43,7 +43,7 @@ class WeatherSpec extends ObjectBehavior
         $this->getProbabilityOfPrecipitation()->shouldBeInteger();
     }
 
-    function it_get_wind_return_integer()
+    function it_get_wind_return_a_wind_object()
     {
         $this->getWind()->shouldHaveType('Manticora\WeatherCenter\Domain\Model\Weather\Wind');
     }

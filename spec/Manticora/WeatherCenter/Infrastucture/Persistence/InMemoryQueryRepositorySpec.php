@@ -2,6 +2,7 @@
 
 namespace spec\Manticora\WeatherCenter\Infrastucture\Persistence;
 
+use Manticora\WeatherCenter\Domain\Model\DateTime\DateTime;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -23,8 +24,10 @@ class InMemoryQueryRepositorySpec extends ObjectBehavior
     }
     function it_return_a_weather_by_coords()
     {
-        $this->findByLocation(3.332, 49.44003)->shouldHaveType('Manticora\WeatherCenter\Domain\Model\Weather\Weather');
-        $this->findByLocation(3.332, 49.44003)->getCondition()->shouldBeEqualTo("Clear");
+
+
+        $this->findByLocationAndDateTime(3.332, 49.44003,new DateTime(new \DateTime) )->shouldHaveType('Manticora\WeatherCenter\Domain\Model\Weather\Weather');
+        $this->findByLocationAndDateTime(3.332, 49.44003,new DateTime(new \DateTime) )->getCondition()->shouldBeEqualTo("Clear");
     }
 
 }

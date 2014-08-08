@@ -13,4 +13,17 @@
         </service>
     </services>
     -->
+    <parameters>
+        <parameter></parameter>
+    </parameters>
+
+    <services>
+        <service id="manticora_weather_center_api.in_memory" class="Manticora\WeatherCenter\Infrastucture\Persistence\InMemoryQueryRepository">
+        </service>
+
+        <service id="manticora_weather_center_api.weather_underground" class="Manticora\WeatherCenter\Infrastucture\Persistence\WeatherUndergroundApi\WeatherQueryRepository">
+            <argument>%parameter_name%</argument>
+
+        </service>
+    </services>
 </container>

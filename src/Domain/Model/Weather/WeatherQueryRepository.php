@@ -7,6 +7,7 @@
  */
 
 namespace Manticora\WeatherCenter\Domain\Model\Weather;
+use Manticora\WeatherCenter\Domain\Model\DateTime\DateTimeInterface;
 
 /**
  * Interface WeatherQueryRepository
@@ -19,6 +20,6 @@ interface WeatherQueryRepository {
      * @param $longitude
      * @return \Manticora\WeatherCenter\Domain\Model\Weather\Weather
      */
-    public function findByLocation($latitude, $longitude);
+    public function findByLocationAndDateTime($latitude, $longitude, DateTimeInterface $dateTime);
 
 } 
