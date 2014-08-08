@@ -6,7 +6,7 @@
 
     <!--
     <services>
-        <service id="manticora_weather_center_api.example" class="Manticora\WeatherCenter\Infrastucture\Symfony\Bundle\ApiBundle\Example">
+        <service id="manticora_weather_center_api.example" class="Ma.classnticora\WeatherCenter\Infrastucture\Symfony\Bundle\ApiBundle\Example">
             <argument type="service" id="service_id" />
             <argument>plain_value</argument>
             <argument>%parameter_name%</argument>
@@ -14,16 +14,23 @@
     </services>
     -->
     <parameters>
-        <parameter></parameter>
+        <parameter key="manticora_weather_center_api.in_memory.class">Manticora\WeatherCenter\Infrastucture\Persistence\InMemoryQueryRepository</parameter>
+        <parameter key="manticora_weather_center_api.weather_underground.class">Manticora\WeatherCenter\Infrastucture\Persistence\WeatherUndergroundApi\WeatherQueryRepository</parameter>
+        <parameter key="manticora_weather_center_api.service.default">manticora_weather_center_api.in_memory</parameter>
+        <parameter key="manticora_weather_center_api.weather_underground.key"></parameter>
+        <parameter key="manticora_weather_center_api.weather_underground.language"></parameter>
+
     </parameters>
 
     <services>
-        <service id="manticora_weather_center_api.in_memory" class="Manticora\WeatherCenter\Infrastucture\Persistence\InMemoryQueryRepository">
+        <service id="manticora_weather_center_api.in_memory" class="%manticora_weather_center_api.in_memory.class%">
         </service>
 
-        <service id="manticora_weather_center_api.weather_underground" class="Manticora\WeatherCenter\Infrastucture\Persistence\WeatherUndergroundApi\WeatherQueryRepository">
-            <argument>%parameter_name%</argument>
-
+        <service id="manticora_weather_center_api.weather_underground" class="%manticora_weather_center_api.weather_underground.class%">
+            <argument>%manticora_weather_center_api.weather_underground.key%</argument>
+            <argument>%manticora_weather_center_api.weather_underground.language%</argument>
         </service>
+
+        <service id="manticora_weather_center_api.service" alias="%manticora_weather_center_api.service.default%" />
     </services>
 </container>

@@ -14,7 +14,7 @@
        "psr/log":                        "~1.0",
         "willdurand/hateoas":                "~2.4",
         "cilex/cilex": "1.0.*@dev",
-        "kriswallsmith/buzz": "~0.12",
+        "kriswallsmith/buzz": "*",
         "peekmo/jsonpath": "dev-master"
     },
     "config": {
