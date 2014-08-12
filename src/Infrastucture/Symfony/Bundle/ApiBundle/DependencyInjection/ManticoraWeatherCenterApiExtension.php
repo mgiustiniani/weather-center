@@ -24,5 +24,24 @@ class ManticoraWeatherCenterApiExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+
+        if($config['default'] == 'weather_underground'
+            && isset($config['weather_underground']['key'])
+            && isset($config['weather_underground']['lang'])) {
+
+            $container->setParameter(
+                'manticora_weather_center_api.weather_underground.key',
+                $config['weather_underground']['key']
+            );
+
+            $container->setParameter(
+                'manticora_weather_center_api.weather_underground.language',
+                $config['weather_underground']['lang']
+            );
+
+            $container->setAlias('manticora_weather_center_api.service', 'manticora_weather_center_api.'.$config['default']);
+        }
+
+
     }
 }
