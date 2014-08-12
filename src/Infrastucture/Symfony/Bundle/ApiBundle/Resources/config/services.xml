@@ -16,7 +16,6 @@
     <parameters>
         <parameter key="manticora_weather_center_api.in_memory.class">Manticora\WeatherCenter\Infrastucture\Persistence\InMemoryQueryRepository</parameter>
         <parameter key="manticora_weather_center_api.weather_underground.class">Manticora\WeatherCenter\Infrastucture\Persistence\WeatherUndergroundApi\WeatherQueryRepository</parameter>
-        <parameter key="manticora_weather_center_api.service.default">manticora_weather_center_api.in_memory</parameter>
         <parameter key="manticora_weather_center_api.weather_underground.key"></parameter>
         <parameter key="manticora_weather_center_api.weather_underground.language"></parameter>
 
@@ -31,6 +30,6 @@
             <argument>%manticora_weather_center_api.weather_underground.language%</argument>
         </service>
 
-        <service id="manticora_weather_center_api.service" alias="%manticora_weather_center_api.service.default%" />
+        <service id="manticora_weather_center_api.service" alias="manticora_weather_center_api.in_memory" />
     </services>
 </container>
