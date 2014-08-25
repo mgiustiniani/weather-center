@@ -44,7 +44,7 @@ class FeatureContext  implements SnippetAcceptingContext,
     public function iFindWeatherOfLatitudeOfAndLongitudeOf($latitude, $longitude)
     {
         $repository = new \Manticora\WeatherCenter\Infrastucture\Persistence\InMemoryQueryRepository();
-        $this->weather =$repository->findByLocation($latitude, $longitude);
+        $this->weather =$repository->findByLocationAndDateTime($latitude, $longitude, new \Manticora\WeatherCenter\Domain\Model\DateTime\DateTime(new \DateTime()));
 
     }
 
