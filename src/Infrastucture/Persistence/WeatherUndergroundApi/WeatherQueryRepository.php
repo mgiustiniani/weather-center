@@ -57,7 +57,7 @@ class WeatherQueryRepository implements BaseWeatherQueryRepository
 
         $o = json_decode($response->getContent(), true);
 
-        $store = new JsonStore();
+        $store = new JsonStore($o);
 
         $pattern=  "$..hourly_forecast[?(@.FCTTIME.hour == {$dateTime->getHour() }
                     &&  @.FCTTIME.mday == {$dateTime->getDay() }
@@ -65,7 +65,7 @@ class WeatherQueryRepository implements BaseWeatherQueryRepository
 
 
 
-        $res = $store->get($o,str_replace(array("\n", "\r"), '', $pattern) );
+        $res = $store->get(str_replace(array("\n", "\r"), '', $pattern) );
         ;
 
         if (!isset($res[0])) {
