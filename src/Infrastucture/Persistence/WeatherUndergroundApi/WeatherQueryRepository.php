@@ -75,7 +75,7 @@ class WeatherQueryRepository implements BaseWeatherQueryRepository
         $weat = $res[0];
         $weather = new Weather(
             $weat['condition'],
-            $weat['icon'],
+            $weat['icon_url'],
             $weat['temp']['metric'],
             $weat['humidity'],
             $weat['pop'],
