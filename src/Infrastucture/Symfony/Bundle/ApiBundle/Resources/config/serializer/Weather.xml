@@ -7,7 +7,7 @@
         <property name="humidity" groups="detail"/>
         <property name="wind" groups="detail"/>
         <h:relation rel="icon">
-            <h:href uri="expr('object.getConditionIcon()')">
+            <h:href uri="expr(object.getConditionIcon())">
 
 
             </h:href>
